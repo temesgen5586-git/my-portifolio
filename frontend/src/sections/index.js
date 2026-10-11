@@ -1,0 +1,11 @@
+export { default as Hero } from './Hero';
+export { default as Stats } from './Stats';
+export { default as TechMarquee } from './TechMarquee';
+export { default as FeaturedProjects } from './FeaturedProjects';
+export { default as AboutPreview } from './AboutPreview';
+export { default as CTA } from './CTA';
+export { default as SkillsGrid } from './SkillsGrid';
+export { default as ExperienceTimeline } from './ExperienceTimeline';
+export { default as AchievementsGrid } from './AchievementsGrid';
+export { default as TestimonialsCards } from './TestimonialsCards';
+export { default as ContactSection } from './ContactSection';

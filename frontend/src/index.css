@@ -1,0 +1,373 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   CSS VARIABLES — Theme tokens (RGB for Tailwind alpha support)
+   ============================================================ */
+:root {
+  /* Dark mode (default) */
+  --color-base-rgb: 10 26 26;              /* #0A1A1A */
+  --color-base-deep-rgb: 6 20 20;          /* #061414 */
+  --color-base-soft-rgb: 13 36 36;         /* #0D2424 */
+  --color-surface-rgb: 255 255 255;        /* white overlay */
+  --color-surface-strong-rgb: 255 255 255;
+  --color-surface-card-rgb: 13 36 36;      /* card bg */
+  --color-edge-rgb: 94 234 212;            /* teal border */
+  --color-edge-strong-rgb: 94 234 212;
+  --color-ink-rgb: 240 253 250;            /* #F0FDFA */
+  --color-ink-soft-rgb: 148 163 184;       /* #94A3B8 */
+  --color-ink-mute-rgb: 100 116 139;       /* #64748B */
+
+  color-scheme: dark;
+}
+
+:root:not(.dark) {
+  /* Light mode overrides */
+  --color-base-rgb: 250 250 250;           /* #FAFAFA */
+  --color-base-deep-rgb: 245 245 245;      /* #F5F5F5 */
+  --color-base-soft-rgb: 255 255 255;      /* #FFFFFF */
+  --color-surface-rgb: 0 0 0;              /* black overlay */
+  --color-surface-strong-rgb: 0 0 0;
+  --color-surface-card-rgb: 255 255 255;   /* white card */
+  --color-edge-rgb: 20 184 166;            /* teal */
+  --color-edge-strong-rgb: 20 184 166;
+  --color-ink-rgb: 10 10 10;               /* #0A0A0A */
+  --color-ink-soft-rgb: 82 82 82;          /* #525252 */
+  --color-ink-mute-rgb: 115 115 115;       /* #737373 */
+
+  color-scheme: light;
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    @apply bg-base text-ink font-sans antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(20, 184, 166, 0.12), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 100%, rgba(245, 197, 66, 0.06), transparent 60%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection {
+    @apply bg-teal/30 text-ink;
+  }
+
+  /* Scrollbar — WebKit */
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  *::-webkit-scrollbar-track {
+    @apply bg-base-deep;
+  }
+  *::-webkit-scrollbar-thumb {
+    @apply bg-teal-deep rounded-full;
+    border: 2px solid rgb(var(--color-base-rgb));
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    @apply bg-teal;
+  }
+
+  /* Focus ring */
+  :focus-visible {
+    outline: 2px solid #5eead4;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* Images */
+  img,
+  svg,
+  video {
+    max-width: 100%;
+    display: block;
+    height: auto;
+  }
+
+  /* Buttons, inputs inherit font */
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+
+  /* Links */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* ============================================================
+   COMPONENT UTILITIES
+   ============================================================ */
+@layer components {
+  /* ---- Glass surfaces ---- */
+  .glass {
+    @apply bg-surface backdrop-blur-xl border border-edge rounded-2xl;
+    background-color: rgba(255, 255, 255, 0.04);
+  }
+  :root:not(.dark) .glass {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  .glass-strong {
+    @apply backdrop-blur-xl border border-edge-strong rounded-2xl;
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+  :root:not(.dark) .glass-strong {
+    background-color: rgba(255, 255, 255, 0.85);
+  }
+
+  .glass-card {
+    @apply backdrop-blur-xl border border-edge rounded-3xl;
+    background-color: rgba(13, 36, 36, 0.6);
+  }
+  :root:not(.dark) .glass-card {
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+
+  /* ---- Pill ---- */
+  .pill {
+    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium
+           bg-surface border border-edge text-teal-soft;
+  }
+
+  /* ---- Primary button ---- */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold
+           text-base-deep bg-gradient-to-r from-teal-soft to-teal
+           transition-all duration-300
+           focus-visible:outline-none;
+  }
+  .btn-primary:hover {
+    @apply shadow-glow;
+    transform: translateY(-2px);
+  }
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+  .btn-primary:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(94, 234, 212, 0.4);
+  }
+  .btn-primary:disabled {
+    @apply opacity-60 cursor-not-allowed;
+  }
+
+  /* ---- Outline button ---- */
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold
+           border border-edge text-ink bg-transparent
+           transition-all duration-300;
+  }
+  .btn-outline:hover {
+    @apply bg-surface border-edge-strong;
+    transform: translateY(-2px);
+  }
+  .btn-outline:active {
+    transform: translateY(0);
+  }
+
+  /* ---- Section titles ---- */
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-center tracking-tight text-ink;
+  }
+  .section-title-caps {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-center tracking-[0.12em]
+           uppercase text-ink;
+  }
+  .section-subtitle {
+    @apply text-center text-ink-soft max-w-2xl mx-auto mt-4 text-base md:text-lg leading-relaxed;
+  }
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+@layer utilities {
+  /* ---- Grid background ---- */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(94, 234, 212, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(94, 234, 212, 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  :root:not(.dark) .grid-bg {
+    background-image:
+      linear-gradient(rgba(20, 184, 166, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20, 184, 166, 0.08) 1px, transparent 1px);
+  }
+
+  /* ---- 3D utilities ---- */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .perspective-1200 {
+    perspective: 1200px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* ---- Text gradients ---- */
+  .text-gradient-teal {
+    background: linear-gradient(135deg, #5eead4, #14b8a6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #fcd34d, #f5c542);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* ---- Noise overlay ---- */
+  .noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+    opacity: 0.03;
+  }
+
+  /* ---- Skip link ---- */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    z-index: 2000;
+    padding: 10px 16px;
+    background: #14b8a6;
+    color: #061414;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: top 0.2s ease;
+  }
+  .skip-link:focus {
+    top: 16px;
+  }
+
+  /* ---- Tilt card hover state ---- */
+  .tilt-hover:hover {
+    transform: translateY(-6px);
+  }
+}
+
+/* ============================================================
+   ANIMATION KEYFRAMES
+   ============================================================ */
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes orbit-reverse {
+  from { transform: rotate(360deg); }
+  to   { transform: rotate(0deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.5; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* Animation utility classes (used by Tailwind's animate-* config) */
+.animate-orbit-slow    { animation: orbit 24s linear infinite; }
+.animate-orbit-reverse { animation: orbit-reverse 30s linear infinite; }
+.animate-float         { animation: float 6s ease-in-out infinite; }
+.animate-marquee       { animation: marquee 40s linear infinite; }
+.animate-spin-slow     { animation: orbit 20s linear infinite; }
+.animate-pulse-slow    { animation: pulse-slow 4s ease-in-out infinite; }
+
+/* Cursor for typing effect */
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: currentColor;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+}
+
+/* Shimmer placeholder */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  a {
+    text-decoration: underline;
+  }
+}
