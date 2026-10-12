@@ -6,7 +6,7 @@ import { testimonials } from '@/data/testimonials';
 
 export default function Testimonials() {
   return (
-    <div className="pt-32 pb-20">
+    <div className="pt-28 pb-14">
       <AnimatedSection className="max-w-6xl mx-auto px-6">
         <SectionTitle caps>TESTIMONIALS</SectionTitle>
         <p className="section-subtitle mb-14">

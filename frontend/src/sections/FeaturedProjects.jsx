@@ -27,10 +27,10 @@ const projects = [
 
 export default function FeaturedProjects() {
   return (
-    <AnimatedSection className="py-20">
+   <AnimatedSection className="py-14 md:py-16">
       <div className="max-w-6xl mx-auto px-6">
         <SectionTitle>Featured Projects</SectionTitle>
-        <p className="section-subtitle mb-12">
+     <p className="section-subtitle mb-10">
           A selection of work I&apos;m proud of — from dashboards to full-stack apps.
         </p>
 
@@ -92,8 +92,7 @@ export default function FeaturedProjects() {
             </motion.article>
           ))}
         </div>
-
-        <div className="text-center mt-10">
+<div className="text-center mt-8">
           <Link to="/projects" className="btn-outline">
             View All Projects <ArrowRight size={18} />
           </Link>

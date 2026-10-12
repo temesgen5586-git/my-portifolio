@@ -210,7 +210,7 @@ export default function Navbar() {
           >
             <Sparkles size={16} />
           </motion.div>
-          <span className="hidden sm:block font-bold text-ink tracking-tight">Portfolio</span>
+          <span className="hidden sm:block font-bold text-ink tracking-tight">Temesgen</span>
         </Link>
 
         {/* Desktop links */}
@@ -241,7 +241,7 @@ export default function Navbar() {
           <Link
             to="/contact"
             className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full
-                       border border-edge text-ink text-sm font-semibold
+                        border border-edge text-ink text-sm font-semibold
                        hover:bg-surface hover:border-edge-strong
                        transition-all duration-300"
           >

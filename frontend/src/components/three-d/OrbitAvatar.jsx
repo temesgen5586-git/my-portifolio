@@ -97,7 +97,7 @@ const orbitIcons = [
 
 export default function OrbitAvatar({ src = '/profile.jpg' }) {
   return (
-    <div className="relative w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] lg:w-[440px] lg:h-[440px]">
+    <div className="relative w-[250px] h-[250px] sm:w-[360px] sm:h-[360px] lg:w-[400px] lg:h-[400px]">
       {/* Outer glow */}
       <div
         className="absolute inset-0 rounded-full
@@ -117,7 +117,7 @@ export default function OrbitAvatar({ src = '/profile.jpg' }) {
           return (
             <div
               key={icon.label}
-              className="absolute w-10 h-10 sm:w-12 sm:h-12 rounded-full
+              className="absolute w-3 h-2 sm:w-12 sm:h-12 rounded-full
                          bg-base-soft border border-edge-strong
                          grid place-items-center font-mono text-xs font-bold
                          shadow-glow-sm"

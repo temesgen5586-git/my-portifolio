@@ -6,10 +6,10 @@ import { testimonials } from '@/data/testimonials';
 
 export default function TestimonialsCards() {
   return (
-    <AnimatedSection className="py-20">
+   <AnimatedSection className="py-14 md:py-16">
       <div className="max-w-6xl mx-auto px-6">
         <SectionTitle>Testimonials</SectionTitle>
-        <p className="section-subtitle mb-12">
+        <p className="section-subtitle mb-10">
           What clients, teammates, and mentors say about working with me.
         </p>
 
