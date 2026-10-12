@@ -1,6 +1,6 @@
 export const testimonials = [
   {
-    name: 'James D.',
+    name: 'Bewket m.',
     role: 'Project Manager',
     company: 'TechCorp',
     quote:
@@ -9,7 +9,7 @@ export const testimonials = [
     featured: true,
   },
   {
-    name: 'Sara M.',
+    name: 'Abaynew F.',
     role: 'UI/UX Designer',
     company: 'InnovateLabs',
     quote:
