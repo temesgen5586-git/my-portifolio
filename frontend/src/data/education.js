@@ -1,10 +1,10 @@
 export const education = {
   degree: {
     title: 'B.Sc. Software Engineering',
-    institution: 'Addis Ababa University',
+    institution: 'Injibara University',
     field: 'Software Engineering',
     status: 'Currently Enrolled',
-    expected: '2026',
+    expected: '2027',
   },
   courses: [
     'Advanced Algorithms',

@@ -45,63 +45,15 @@ export default function Hero() {
   }, [display, phase, roleIndex]);
 
   return (
-   <section className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
-  {/* Grid pattern */}
-  <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" aria-hidden="true" />
 
-  {/* Animated teal blob top-left */}
-  <motion.div
-    animate={{ x: [0, 40, 0], y: [0, 20, 0] }}
-    transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-    className="absolute top-1/3 -left-40 w-[500px] h-[500px] rounded-full
-               bg-teal/20 blur-[120px] pointer-events-none"
-    aria-hidden="true"
-  />
+   <section className="relative min-h-[85vh] flex items-center pt-24 pb-12 overflow-hidden">
+      <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" aria-hidden="true" />
+      <div
+        className="absolute top-1/3 -left-40 w-[500px] h-[500px] rounded-full
+                   bg-teal/20 blur-[120px] pointer-events-none"
+        aria-hidden="true"
+      />
 
-  {/* Animated gold blob bottom-right */}
-  <motion.div
-    animate={{ x: [0, -30, 0], y: [0, -20, 0] }}
-    transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
-    className="absolute bottom-0 -right-40 w-[400px] h-[400px] rounded-full
-               bg-gold/10 blur-[120px] pointer-events-none"
-    aria-hidden="true"
-  />
-
-  {/* Center halo behind avatar */}
-  <div
-    className="absolute top-1/2 right-0 lg:right-[10%] -translate-y-1/2
-               w-[600px] h-[600px] rounded-full
-               bg-gradient-to-br from-teal/15 via-transparent to-gold/10
-               blur-[100px] pointer-events-none"
-    aria-hidden="true"
-  />
-
-  {/* Animated teal blob top-left */}
-  <motion.div
-    animate={{ x: [0, 40, 0], y: [0, 20, 0] }}
-    transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-    className="absolute top-1/3 -left-40 w-[500px] h-[500px] rounded-full
-               bg-teal/20 blur-[120px] pointer-events-none"
-    aria-hidden="true"
-  />
-
-  {/* Animated gold blob bottom-right */}
-  <motion.div
-    animate={{ x: [0, -30, 0], y: [0, -20, 0] }}
-    transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
-    className="absolute bottom-0 -right-40 w-[400px] h-[400px] rounded-full
-               bg-gold/10 blur-[120px] pointer-events-none"
-    aria-hidden="true"
-  />
-
-  {/* Center halo behind avatar */}
-  <div
-    className="absolute top-1/2 right-0 lg:right-[10%] -translate-y-1/2
-               w-[600px] h-[600px] rounded-full
-               bg-gradient-to-br from-teal/15 via-transparent to-gold/10
-               blur-[100px] pointer-events-none"
-    aria-hidden="true"
-  />
       <div
         className="absolute bottom-0 -right-40 w-[400px] h-[400px] rounded-full
                    bg-gold/10 blur-[120px] pointer-events-none"

@@ -13,14 +13,18 @@ export const profile = {
     "I'm a Full-Stack Developer and Software Engineering student who builds modern, scalable web applications from UI to database.",
     'I work with React, Node.js, Express, and MySQL — combining hands-on project experience with a strong academic foundation in software engineering.',
   ],
-  location: 'Addis Ababa, Ethiopia',
+
+
+
+  location: 'Bahir dar, Ethiopia',
+
   email: 'temesgen5586@gmail.com',
   availability: 'Available for work',
   cvUrl: '/resume.pdf',
   socials: {
     github: 'https://github.com/temesgen5586-git',
     linkedin: 'https://linkedin.com/in/yourusername',
-    telegram: 'https://t.me/yourusername',
+    telegram: 'https://t.me/temu55860',
     facebook: 'https://facebook.com/yourusername',
     instagram: 'https://instagram.com/yourusername',
     email: 'mailto:temesgen5586@gmail.com',

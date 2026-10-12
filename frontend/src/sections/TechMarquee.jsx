@@ -8,7 +8,7 @@ export default function TechMarquee() {
   const items = [...techs, ...techs];
 
   return (
-    <section className="py-10 overflow-hidden">
+    <section className="py-6 overflow-hidden">
       <div className="relative">
         <div
           className="absolute inset-y-0 left-0 w-32 z-10 pointer-events-none"

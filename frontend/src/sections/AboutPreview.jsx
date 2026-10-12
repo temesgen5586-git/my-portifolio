@@ -8,8 +8,9 @@ const traits = ['Problem Solver', 'Team Player', 'Tech Enthusiast'];
 
 export default function AboutPreview() {
   return (
-    <AnimatedSection className="py-20">
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <AnimatedSection className="py-14 md:py-16">
+      <div className="max-w-4xl mx-auto px-10 grid md:grid-cols-2 gap-10 items-center">
+        {/* LEFT — Image */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -18,17 +19,26 @@ export default function AboutPreview() {
           className="relative"
         >
           <div className="aspect-square rounded-3xl overflow-hidden glass-card relative">
+            {/* Gradient overlay */}
             <div
               className="absolute inset-0 bg-gradient-to-br from-teal/20 to-gold/10"
               aria-hidden="true"
             />
-            <div className="absolute inset-0 grid-bg opacity-40" aria-hidden="true" />
+
+            {/* Grid overlay */}
+            <div
+              className="absolute inset-0 grid-bg opacity-40"
+              aria-hidden="true"
+            />
+
+            {/* Initial letter (fallback) */}
             <div className="absolute inset-0 grid place-items-center text-teal-soft text-6xl font-bold opacity-40">
               {profile.firstName?.charAt(0) || 'A'}
             </div>
           </div>
         </motion.div>
 
+        {/* RIGHT — Content */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -37,17 +47,20 @@ export default function AboutPreview() {
         >
           <p className="pill mb-4">About Me</p>
 
+
+          
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-ink mb-6">
             Building modern web experiences.
           </h2>
 
-          <p className="text-ink-soft leading-relaxed mb-6">
-            {profile.bio[0]}
-          </p>
+          <p className="text-ink-soft leading-relaxed mb-6">{profile.bio[0]}</p>
 
           <ul className="grid gap-2 mb-6">
             {traits.map((t) => (
-              <li key={t} className="flex items-center gap-2 text-ink-soft text-sm">
+              <li
+                key={t}
+                className="flex items-center gap-2 text-ink-soft text-sm"
+              >
                 <CheckCircle2 size={16} className="text-teal-soft shrink-0" />
                 {t}
               </li>
