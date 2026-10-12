@@ -4,6 +4,7 @@ import { ArrowRight, Download, ChevronDown } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import OrbitAvatar from '@/components/three-d/OrbitAvatar';
 import { profile } from '@/data/profile';
+import profileImg from '@/assets/images/profile.jpg';
 
 const container = {
   hidden: { opacity: 0 },
@@ -165,7 +166,7 @@ export default function Hero() {
             transition={{ duration: 1, ease: [0.2, 0, 0, 1] }}
             className="flex justify-center lg:justify-end"
           >
-            <OrbitAvatar src="/profile.jpg" />
+           <OrbitAvatar src={profileImg} />
           </motion.div>
         </div>
       </div>

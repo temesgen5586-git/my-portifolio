@@ -7,8 +7,8 @@ import { profile } from '@/data/profile';
 
 const infoCards = [
   { icon: Mail,     label: 'Email',    value: profile.email,                     href: `mailto:${profile.email}`, copy: profile.email },
-  { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/yourusername',   href: profile.socials.linkedin },
-  { icon: Github,   label: 'GitHub',   value: 'github.com/yourusername',        href: profile.socials.github },
+  { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/temesgen5586',   href: profile.socials.linkedin },
+  { icon: Github,   label: 'GitHub',   value: 'https://github.com/temesgen5586-git',        href: profile.socials.github },
   { icon: MapPin,   label: 'Location', value: profile.location,                 href: null },
 ];
 
