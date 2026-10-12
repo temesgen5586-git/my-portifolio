@@ -41,11 +41,18 @@ export default function About() {
             className="relative w-60 h-60 mx-auto md:mx-0"
           >
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-teal-soft/30 to-gold/20 blur-2xl" />
-            <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-teal-soft/30 shadow-glow grid place-items-center bg-gradient-to-br from-teal-soft to-teal">
-              <span className="text-7xl font-bold text-base-deep">
-                {profile.firstName?.charAt(0) || 'A'}
-              </span>
-            </div>
+       <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-teal-soft/30 shadow-glow bg-gradient-to-br from-teal-soft to-teal grid place-items-center">
+  <img
+    src="/about.jpg"
+    alt={profile.name}
+    className="w-full h-full object-cover"
+    onError={(e) => {
+      e.currentTarget.style.display = 'none';
+      const parent = e.currentTarget.parentElement;
+      parent.innerHTML = `<span class="text-7xl font-bold text-base-deep">${profile.firstName?.charAt(0) || 'A'}</span>`;
+    }}
+  />
+</div>
           </motion.div>
 
           <motion.div
