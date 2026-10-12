@@ -45,7 +45,7 @@ export default function Hero() {
   }, [display, phase, roleIndex]);
 
   return (
-    <section className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
+   <section className="relative min-h-[85vh] flex items-center pt-24 pb-12 overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" aria-hidden="true" />
       <div
         className="absolute top-1/3 -left-40 w-[500px] h-[500px] rounded-full
