@@ -30,7 +30,7 @@ const funFacts = [
 
 export default function About() {
   return (
-    <div className="pt-28 pb-14">
+    <div className="pt-24 pb-12">
       {/* SECTION 1 — Profile Hero */}
       <section className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-[240px_1fr] gap-10 items-center">
