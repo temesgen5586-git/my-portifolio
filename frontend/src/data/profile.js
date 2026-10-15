@@ -2,11 +2,11 @@ export const profile = {
   name: 'Temesgen Worku',
   firstName: 'Temesgen',
   role: 'Full-Stack Developer & Software Engineering Student',
-  roles: [
+  roles:[
     'Full Stack Developer',
-    'Software Engineer',
-    'UI/UX Designer',
-    'Problem Solver',
+  'Software Engineer',
+  'UI/UX Designer',
+  'Problem Solver',
   ],
   tagline: 'I build modern, scalable web applications from UI to database.',
   bio: [
@@ -23,9 +23,9 @@ export const profile = {
   cvUrl: '/resume.pdf',
   socials: {
     github: 'https://github.com/temesgen5586-git',
-    linkedin: 'https://linkedin.com/in/yourusername',
+    linkedin: 'https://linkedin.com/in/temesgen worku',
     telegram: 'https://t.me/temu55860',
-    facebook: 'https://facebook.com/yourusername',
+    facebook: 'https://facebook.com/shegaw worku',
     instagram: 'https://instagram.com/yourusername',
     email: 'mailto:temesgen5586@gmail.com',
   },

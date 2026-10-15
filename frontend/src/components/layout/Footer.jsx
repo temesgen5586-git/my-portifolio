@@ -20,10 +20,10 @@ export default function Footer() {
       />
 
       <div className="relative max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
-        <p className="text-ink-soft text-sm">
-          Made with <span className="text-teal-soft">♥</span> and{' '}
+        {/* <p className="text-ink-soft text-sm">
+          Made with <span className="text-teal-soft"></span> {' '}
           <span className="font-mono text-teal-soft">React/Tailwind</span>
-        </p>
+        </p> */}
 
         <div className="flex items-center gap-2">
           {socials.map(({ icon: Icon, href, label }) => (
@@ -38,7 +38,7 @@ export default function Footer() {
               className="w-10 h-10 grid place-items-center rounded-full
                          bg-surface border border-edge text-ink-soft
                          hover:text-teal-soft hover:border-edge-strong
-                         hover:shadow-glow-sm transition-colors duration-300"
+                        //  hover:shadow-glow-sm transition-colors duration-300"
             >
               <Icon size={16} />
             </motion.a>

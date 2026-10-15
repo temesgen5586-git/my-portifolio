@@ -13,7 +13,7 @@ import About from '@/pages/About';
 import Skills from '@/pages/Skills';
 import Experience from '@/pages/Experience';
 import Projects from '@/pages/Projects';
-import Testimonials from '@/pages/Testimonials';
+// import Testimonials from '@/pages/Testimonials';
 import Contact from '@/pages/Contact';
 import NotFound from '@/pages/NotFound';
 
@@ -33,7 +33,7 @@ export default function App() {
             <Route path="/experience" element={<PageTransition><Experience /></PageTransition>} />
             <Route path="/skills" element={<PageTransition><Skills /></PageTransition>} />
             <Route path="/projects" element={<PageTransition><Projects /></PageTransition>} />
-            <Route path="/testimonials" element={<PageTransition><Testimonials /></PageTransition>} />
+            {/* <Route path="/testimonials" element={<PageTransition><Testimonials /></PageTransition>} /> */}
             <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
             <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
           </Routes>

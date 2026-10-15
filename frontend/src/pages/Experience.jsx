@@ -184,7 +184,7 @@ export default function Experience() {
           A timeline of roles, internships, and freelance work.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
           {experience.map((exp, i) => (
             <motion.div
               key={`${exp.role}-${i}`}

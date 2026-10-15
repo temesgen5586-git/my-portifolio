@@ -192,9 +192,9 @@ export default function Skills() {
 
         {/* Skills grid — horizontal card layout */}
         <motion.div
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"
-        >
+  layout
+  className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-5 lg:grid-cols-6 gap-2.5"
+>
           <AnimatePresence mode="popLayout">
             {filtered.map((skill, i) => (
               <motion.div
@@ -206,7 +206,7 @@ export default function Skills() {
                 transition={{ duration: 0.3, delay: i * 0.02 }}
                 whileHover={{ y: -4 }}
                 className="glass-card p-4 flex items-center gap-3
-                           cursor-pointer
+                          
                            hover:border-teal/30 hover:shadow-glow-sm
                            transition-all duration-300"
               >

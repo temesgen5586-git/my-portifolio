@@ -10,7 +10,7 @@ const links = [
   { to: '/experience', label: 'Experience' },
   { to: '/skills', label: 'Skills' },
   { to: '/projects', label: 'Projects' },
-  { to: '/testimonials', label: 'Testimonials' },
+  // { to: '/testimonials', label: 'Testimonials' },
   { to: '/contact', label: 'Contact' },
 ];
 
@@ -64,7 +64,7 @@ export default function Navbar() {
               <Sparkles size={16} />
             </motion.div>
             <span className="hidden sm:block font-bold text-ink tracking-tight">
-              Portfolio
+                TEMESGEN
             </span>
           </Link>
 
@@ -92,7 +92,7 @@ export default function Navbar() {
           {/* Right side */}
           <div className="flex items-center gap-2">
             <ThemeToggle />
-
+{/* 
             <Link
               to="/contact"
               className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full
@@ -101,7 +101,7 @@ export default function Navbar() {
                          transition-all duration-300"
             >
               Sign up
-            </Link>
+            </Link> */}
 
             <button
               onClick={() => setOpen((v) => !v)}
