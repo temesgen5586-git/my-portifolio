@@ -9,3 +9,5 @@ export { default as ExperienceTimeline } from './ExperienceTimeline';
 export { default as AchievementsGrid } from './AchievementsGrid';
 export { default as TestimonialsCards } from './TestimonialsCards';
 export { default as ContactSection } from './ContactSection';
+export { default as SkillsPreview } from './SkillsPreview';
+export { default as ExperiencePreview } from './ExperiencePreview';

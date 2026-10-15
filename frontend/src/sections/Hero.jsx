@@ -64,7 +64,7 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <motion.div variants={container} initial="hidden" animate="show">
             <motion.p variants={item} className="text-sm md:text-base text-ink-soft mb-3">
-              I am a
+              {/* Hello, I&apos;m <span className="text-teal-soft font-semibold">{profile.firstName}</span> */}
             </motion.p>
 
             <motion.h1
@@ -72,9 +72,9 @@ export default function Hero() {
               className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight
                          text-teal-soft mb-4"
             >
-              [Full Stack Developer
+              Full Stack Developer
               <br />
-              UI/UX Designer]
+              UI/UX Designer
             </motion.h1>
 
             <motion.div variants={item} className="h-8 mb-6">
@@ -98,10 +98,10 @@ export default function Hero() {
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                <ChevronDown size={20} className="text-teal-soft" />
-              </motion.div>
-              <span className="text-ink-soft text-sm">Scroll to explore</span>
-            </motion.div>
+                {/* <ChevronDown size={20} className="text-teal-soft" /> */}
+               </motion.div>
+              {/* <span className="text-ink-soft text-sm">Scroll to explore</span> */}
+            </motion.div> 
 
             <motion.p
               variants={item}

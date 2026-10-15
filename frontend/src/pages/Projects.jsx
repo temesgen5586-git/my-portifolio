@@ -3,21 +3,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Github, ExternalLink, Search } from 'lucide-react';
 import SectionTitle from '@/components/ui/SectionTitle';
 import AnimatedSection from '@/components/ui/AnimatedSection';
-import { projects, projectCategories } from '@/data/projects';
+import { projects } from '@/data/projects';
 
 export default function Projects() {
-  const [active, setActive] = useState('All');
   const [query, setQuery] = useState('');
 
   const filtered = useMemo(() => {
-    return projects
-      .filter((p) => active === 'All' || p.category === active)
-      .filter(
-        (p) =>
-          p.title.toLowerCase().includes(query.toLowerCase()) ||
-          p.description.toLowerCase().includes(query.toLowerCase()),
-      );
-  }, [active, query]);
+    return projects.filter(
+      (p) =>
+        p.title.toLowerCase().includes(query.toLowerCase()) ||
+        p.description.toLowerCase().includes(query.toLowerCase()),
+    );
+  }, [query]);
 
   return (
     <div className="pt-20 pb-10">
@@ -27,44 +24,23 @@ export default function Projects() {
           A collection of work spanning web, mobile, and design.
         </p>
 
-        {/* Filters + search */}
-        <div className="flex flex-col md:flex-row md:items-center gap-3 mb-5">
-          <div className="flex flex-wrap gap-1.5">
-            {projectCategories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActive(cat)}
-                className={`px-3 py-1.5 rounded-full text-[11px] font-medium transition-all
-                  ${active === cat
-                    ? 'bg-teal/15 text-teal-soft border border-edge-strong'
-                    : 'border border-edge text-ink-soft hover:bg-surface'}`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          <div className="md:ml-auto relative w-full md:w-56">
-            <Search
-              size={13}
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-mute"
-            />
-            <input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search projects..."
-              className="w-full pl-8 pr-3 py-1.5 rounded-full bg-surface border border-edge
-                         text-ink text-xs placeholder:text-ink-mute outline-none
-                         focus:border-edge-strong transition-colors"
-            />
-          </div>
+        {/* Search bar */}
+        <div className="max-w-md mx-auto relative mb-4">
+          <Search
+            size={13}
+            className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-mute"
+          />
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search projects..."
+            className="w-full pl-8 pr-3 py-1.5 rounded-full bg-surface border border-edge
+                       text-ink text-xs placeholder:text-ink-mute outline-none
+                       focus:border-edge-strong transition-colors"
+          />
         </div>
 
-        {/* Count */}
-        <p className="text-ink-mute text-[11px] mb-3">
-          Showing {filtered.length}{' '}
-          {filtered.length === 1 ? 'project' : 'projects'}
-        </p>
+      
 
         {/* Grid */}
         <AnimatePresence mode="popLayout">
@@ -72,23 +48,20 @@ export default function Projects() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="glass-card p-8 text-center"
+              className="glass-card p-8 text-center max-w-md mx-auto"
             >
               <p className="text-ink-soft mb-3 text-sm">
-                No projects match your filters.
+                No projects match your search.
               </p>
               <button
-                onClick={() => {
-                  setActive('All');
-                  setQuery('');
-                }}
+                onClick={() => setQuery('')}
                 className="btn-outline text-xs py-1.5 px-4"
               >
-                Clear Filters
+                Clear Search
               </button>
             </motion.div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-3">
               {filtered.map((p, i) => (
                 <motion.article
                   key={p.title}
@@ -127,7 +100,7 @@ export default function Projects() {
                       </>
                     )}
 
-                    {/* Category badge overlaid */}
+                    {/* Category badge */}
                     <span className="absolute top-2 left-2 pill text-[10px] py-0.5 px-2">
                       {p.category}
                     </span>
@@ -138,9 +111,8 @@ export default function Projects() {
                     {p.title}
                   </h3>
 
-                  {/* Description — 2 lines */}
-                  <p className="text-ink-soft text-xs leading-relaxed mb-3
-                                line-clamp-2">
+                  {/* Description */}
+                  <p className="text-ink-soft text-xs leading-relaxed mb-3 line-clamp-2">
                     {p.description}
                   </p>
 
