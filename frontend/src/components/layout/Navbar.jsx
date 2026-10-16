@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, Sparkles } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 
@@ -45,29 +45,53 @@ export default function Navbar() {
         className="fixed top-0 left-0 right-0 z-50 px-4 pt-0"
         style={{ position: 'fixed', marginTop: 0, top: 0 }}
       >
-        <motion.nav
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, ease: [0.2, 0, 0, 1] }}
-       className={`mx-auto max-w-6xl flex items-center justify-between gap-4
-  px-4 md:px-6 py-3 rounded-full transition-all duration-500
-  ${scrolled ? 'navbar-bg-scrolled' : 'navbar-bg'}`}
-        >
-          {/* Brand */}
-          <Link to="/" className="flex items-center gap-2 shrink-0 group">
-            <motion.div
-              whileHover={{ rotate: 180 }}
-              transition={{ duration: 0.5 }}
-              className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-soft to-teal
-                         flex items-center justify-center text-base-deep"
-            >
-              <Sparkles size={16} />
-            </motion.div>
-            <span className="hidden sm:block font-bold text-ink tracking-tight">
-                TEMESGEN
-            </span>
-          </Link>
-
+      <motion.nav
+  initial={{ y: -100, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 0.6, ease: [0.2, 0, 0, 1] }}
+  className="mx-auto max-w-6xl flex items-center justify-between gap-4
+             px-4 md:px-6 py-3 rounded-full"
+  style={{
+    background: 'transparent',
+    backgroundColor: 'transparent',
+    backdropFilter: 'none',
+    WebkitBackdropFilter: 'none',
+    border: 'none',
+    outline: 'none',
+    boxShadow: 'none',
+  }}
+>
+         <Link to="/" className="flex items-center gap-2 shrink-0 group">
+  <motion.div
+    whileHover={{ scale: 1.1 }}
+    transition={{ duration: 0.3 }}
+    className="rounded-full overflow-hidden ring-2 ring-teal-soft/40 shadow-glow-sm"
+    style={{ width: 36, height: 36, flexShrink: 0 }}
+  >
+    <img
+      src="logo.png"
+      alt="Profile"
+      style={{
+       
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        objectPosition: 'center',
+        display: 'block',
+      }}
+      onError={(e) => {
+        e.currentTarget.style.display = 'none';
+        const parent = e.currentTarget.parentElement;
+        if (parent) {
+          parent.innerHTML = '<div style="width:100%;height:100%;display:grid;place-items:center;background:linear-gradient(135deg,#5eead4,#14b8a6);color:#061414;font-weight:700;font-size:12px;">A</div>';
+        }
+      }}
+    />
+  </motion.div>
+  <span className="hidden sm:block font-bold text-ink tracking-tight">
+    Temesgen
+  </span>
+</Link>
           {/* Desktop links */}
           <ul className="hidden lg:flex items-center gap-1">
             {links.map((l) => (

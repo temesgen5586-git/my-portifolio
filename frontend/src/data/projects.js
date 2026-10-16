@@ -32,36 +32,36 @@ export const projects = [
     live: 'https://3d-ebooks.example.com',
     featured: true,
   },
-  // {
-  //   title: 'Task Management App',
-  //   category: 'Web',
-  //   description:
-  //     'Kanban-style task manager with drag-and-drop, real-time sync, and team collaboration.',
-  //   tech: ['React', 'Node.js', 'MongoDB'],
-  //   color: '#5EEAD4',
-  //   github: 'https://github.com/yourusername/task-manager',
-  //   live: 'https://task-manager.example.com',
-  // },
-  // {
-  //   title: 'Fitness Tracker',
-  //   category: 'Mobile',
-  //   description:
-  //     'Cross-platform mobile app for tracking workouts, nutrition, and daily progress.',
-  //   tech: ['React Native', 'Firebase'],
-  //   color: '#F472B6',
-  //   github: 'https://github.com/yourusername/fitness-tracker',
-  //   live: null,
-  // },
-  // {
-  //   title: 'Portfolio Template',
-  //   category: 'Design',
-  //   description:
-  //     'A premium portfolio template for developers with dark/light modes and smooth animations.',
-  //   tech: ['React', 'Tailwind', 'Framer'],
-  //   color: '#F5C542',
-  //   github: 'https://github.com/yourusername/portfolio-template',
-  //   live: 'https://portfolio-template.example.com',
-  // },
+  {
+    title: 'Task Management App',
+    category: 'Web',
+    description:
+      'Kanban-style task manager with drag-and-drop, real-time sync, and team collaboration.',
+    tech: ['React', 'Node.js', 'MongoDB'],
+    color: '#5EEAD4',
+    github: 'https://github.com/yourusername/task-manager',
+    live: 'https://task-manager.example.com',
+  },
+  {
+    title: 'Fitness Tracker',
+    category: 'Mobile',
+    description:
+      'Cross-platform mobile app for tracking workouts, nutrition, and daily progress.',
+    tech: ['React Native', 'Firebase'],
+    color: '#F472B6',
+    github: 'https://github.com/yourusername/fitness-tracker',
+    live: null,
+  },
+  {
+    title: 'Portfolio Template',
+    category: 'Design',
+    description:
+      'A premium portfolio template for developers with dark/light modes and smooth animations.',
+    tech: ['React', 'Tailwind', 'Framer'],
+    color: '#F5C542',
+    github: 'https://github.com/yourusername/portfolio-template',
+    live: 'https://portfolio-template.example.com',
+  },
   // {
   //   title: 'Weather Dashboard',
   //   category: 'Web',
