@@ -1,27 +1,27 @@
 export const experience = [
-  {
-    role: 'Senior Frontend Engineer',
-    company: 'TechCorp',
-    location: 'Remote',
-    period: '2021 – Present',
-    type: 'Work',
-    points: [
-      'Improved page performance by 40% through code splitting and lazy loading',
-      'Delivered AI-driven dashboards and enterprise-grade solutions',
-      'Mentored 4 junior developers and led code reviews',
-    ],
-    tech: ['React', 'TypeScript', 'Node.js'],
-  },
+  // {
+  //   role: 'Junior Frontend Engineer',
+  //   company: 'TechCorp',
+  //   location: 'Remote',
+  //   period: '2025 – Present',
+  //   type: 'Work',
+  //   points: [
+  //     'Improved page performance by 40% through code splitting and lazy loading',
+  //     'Delivered AI-driven dashboards and enterprise-grade solutions',
+  //     'Mentored 4 junior developers and led code reviews',
+  //   ],
+  //   tech: ['React', 'TypeScript', 'Node.js'],
+  // },
   {
     role: 'Frontend Engineer',
     company: 'InnovateLabs',
     location: 'Addis Ababa',
-    period: '2019 – 2021',
+    period: '2024 – 2025',
     type: 'Work',
     points: [
-      'Built and shipped 12+ production features used by 50k+ users',
+      'Built and shipped 4+ production features used by 50k+ users',
       'Led the migration from Create React App to Vite',
-      'Reduced bundle size by 35% and improved Lighthouse score to 95+',
+      'Reduced bundle size by 35% and improved Lighthouse score to 90+',
     ],
     tech: ['React', 'Redux', 'Tailwind', 'Jest'],
   },
@@ -29,7 +29,7 @@ export const experience = [
     role: 'Freelance Web Developer',
     company: 'Self-Employed',
     location: 'Remote',
-    period: '2018 – 2019',
+    period: '2024 – 2025',
     type: 'Freelance',
     points: [
       'Built responsive websites for 10+ clients across industries',
@@ -42,7 +42,7 @@ export const experience = [
     role: 'Junior Developer',
     company: 'StartupHub',
     location: 'Addis Ababa',
-    period: '2017 – 2018',
+    period: '2024 – 2025',
     type: 'Internship',
     points: [
       'Contributed to internal tools used by 200+ employees',

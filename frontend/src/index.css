@@ -821,3 +821,26 @@ button[aria-label]:focus {
     0 8px 32px -12px rgba(0, 0, 0, 0.15),
     0 0 0 1px rgba(20, 184, 166, 0.1);
 }
+
+
+
+.particles-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+/* Global particle layer — safety net, in case JS inline styles are ever removed */
+.global-particles {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Make sure body/page wrappers don't hide the particles */
+body {
+  background: #0a0f14;   /* or whatever your dark base is */
+}

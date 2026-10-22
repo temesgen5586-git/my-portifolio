@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Download, ChevronDown } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, lazy, Suspense } from 'react';
 import OrbitAvatar from '@/components/three-d/OrbitAvatar';
 import { profile } from '@/data/profile';
 import profileImg from '@/assets/images/profile.jpg';
+
+
 
 const container = {
   hidden: { opacity: 0 },
@@ -47,6 +49,10 @@ export default function Hero() {
   return (
 
    <section className="relative min-h-[85vh] flex items-center pt-24 pb-12 overflow-hidden">
+
+      {/* NEW: 3D particles layer — behind everything, non-blocking */}
+      
+
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" aria-hidden="true" />
       <div
         className="absolute top-1/3 -left-40 w-[500px] h-[500px] rounded-full
@@ -60,7 +66,7 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="relative max-w-7xl mx-auto px-6 w-full">
+      <div className="relative max-w-7xl mx-auto px-6 w-full z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <motion.div variants={container} initial="hidden" animate="show">
             <motion.p variants={item} className="text-sm md:text-base text-ink-soft mb-3">

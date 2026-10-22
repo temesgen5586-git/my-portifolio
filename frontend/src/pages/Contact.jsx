@@ -161,7 +161,7 @@ export default function Contact({ embedded = false }) {
               </motion.div>
             ))}
 
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.55 }}
@@ -171,7 +171,7 @@ export default function Contact({ embedded = false }) {
                 Usually responds within{' '}
                 <span className="text-teal-soft font-semibold">24 hours</span>
               </p>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
            <motion.div
             initial={{ opacity: 0, x: -30 }}
