@@ -32,14 +32,3 @@ export const profile = {
 };
 
 export default profile;
-<form action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="e14c78de-edf1-4f55-a066-305c6fc00ee0">
-  <input type="hidden" name="subject" value="New message from my portfolio">
-  <input type="checkbox" name="botcheck" style="display:none">
-
-  <input type="text" name="name" placeholder="Your name" required>
-  <input type="email" name="email" placeholder="Your email" required>
-  <textarea name="message" placeholder="Your message" required></textarea>
-
-  <button type="submit">Send message</button>
-</form>
