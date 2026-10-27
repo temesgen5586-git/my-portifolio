@@ -300,7 +300,7 @@ import { profile } from '@/data/profile';
 
 // EmailJS settings
 const EMAILJS_SERVICE_ID = 'service_8m07roa';
-const EMAILJS_TEMPLATE_ID = 'template_fnqs2wi';
+const EMAILJS_TEMPLATE_ID = 'template_fnqs2wj';
 const EMAILJS_PUBLIC_KEY = 'aWEw4Z6kiJnKqtb54';
 
 const infoCards = [
@@ -493,6 +493,7 @@ export default function Contact({ embedded = false }) {
                              bg-red-500/10 border border-red-500/30 rounded-2xl px-3 py-2"
                 >
                   <AlertCircle size={16} />
+                  {console.error('EmailJS error:', error.status, error.text)}
                   Something went wrong. Please try again.
                 </div>
               )}

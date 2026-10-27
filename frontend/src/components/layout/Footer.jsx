@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import { profile } from '@/data/profile';
 
 const socials = [
-  { icon: Github, href: profile.socials.github, label: 'GitHub' },
-  { icon: Linkedin, href: profile.socials.linkedin, label: 'LinkedIn' },
-  { icon: Send, href: profile.socials.telegram, label: 'Telegram' },
-  { icon: Facebook, href: profile.socials.facebook, label: 'Facebook' },
-  { icon: Instagram, href: profile.socials.instagram, label: 'Instagram' },
-  { icon: Mail, href: profile.socials.email, label: 'Email' },
+  { icon: Github, href: profile.socials.github, label: 'GitHub', color: '#374151' },
+  { icon: Linkedin, href: profile.socials.linkedin, label: 'LinkedIn', color: '#0A66C2' },
+  { icon: Send, href: profile.socials.telegram, label: 'Telegram', color: '#229ED9' },
+  { icon: Facebook, href: profile.socials.facebook, label: 'Facebook', color: '#1877F2' },
+  { icon: Instagram, href: profile.socials.instagram, label: 'Instagram', color: '#E1306C' },
+  { icon: Mail, href: profile.socials.email, label: 'Email', color: '#EA4335' },
 ];
 
 export default function Footer() {
@@ -20,25 +20,19 @@ export default function Footer() {
       />
 
       <div className="relative max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
-        {/* <p className="text-ink-soft text-sm">
-          Made with <span className="text-teal-soft"></span> {' '}
-          <span className="font-mono text-teal-soft">React/Tailwind</span>
-        </p> */}
-
         <div className="flex items-center gap-2">
-          {socials.map(({ icon: Icon, href, label }) => (
+          {socials.map(({ icon: Icon, href, label, color }) => (
             <motion.a
               key={label}
               href={href}
               target={href.startsWith('mailto') ? undefined : '_blank'}
               rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
               aria-label={label}
+              style={{ backgroundColor: color }}
               whileHover={{ y: -4, scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-10 h-10 grid place-items-center rounded-full
-                         bg-surface border border-edge text-ink-soft
-                         hover:text-teal-soft hover:border-edge-strong
-                        //  hover:shadow-glow-sm transition-colors duration-300"
+              className="w-10 h-10 grid place-items-center rounded-full text-white
+                         shadow-md transition-shadow duration-300 hover:shadow-lg"
             >
               <Icon size={16} />
             </motion.a>
