@@ -137,7 +137,7 @@ export default function FloatingParticles({
           gl={{ antialias: true, alpha: true }}
         >
           <MouseTracker mouse={mouse} />
-          <ParticleCloud
+          {/* <ParticleCloud
             count={finalCount}
             mouse={mouse}
             color={primaryColor}
@@ -146,7 +146,21 @@ export default function FloatingParticles({
             count={Math.floor(finalCount / 2)}
             mouse={mouse}
             color={secondaryColor}
-          />
+          /> */}
+
+
+          <ParticleCloud
+  key={`primary-${finalCount}`}
+  count={finalCount}
+  mouse={mouse}
+  color={primaryColor}
+/>
+<DepthCloud
+  key={`depth-${finalCount}`}
+  count={Math.floor(finalCount / 2)}
+  mouse={mouse}
+  color={secondaryColor}
+/>
         </Canvas>
       )}
     </div>
