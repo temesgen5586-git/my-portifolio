@@ -69,9 +69,9 @@ export default function ExperiencePreview() {
         </div>
 
         <div className="text-center mt-8">
-          <Link to="/experience" className="btn-outline">
+          {/* <Link to="/experience" className="btn-outline">
             View Full Experience <ArrowRight size={18} />
-          </Link>
+          </Link> */}
         </div>
       </div>
     </AnimatedSection>
