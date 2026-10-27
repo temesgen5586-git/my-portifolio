@@ -17,7 +17,7 @@ export default function Home() {
       <section id="about-section" className="mt-16 md:mt-20">
         <About embedded />
       </section>
-      {/* <TechMarquee /> */}
+      <TechMarquee />
       <FeaturedProjects />
       
       <SkillsPreview />

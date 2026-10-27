@@ -52,7 +52,6 @@
 //     tech: ['JavaScript', 'HTML', 'CSS', 'Git'],
 //   },
 // ];
-
 export const experience = [
   {
     // EDIT: put your real job title, company and dates
@@ -68,5 +67,20 @@ export const experience = [
       "Built and deployed my own portfolio with Three.js animation, Framer Motion and a working EmailJS contact form",
     ],
     tech: ["React", "Node.js", "Express", "Tailwind", "Git"],
+  },
+  {
+    // EDIT: say whether you did the frontend, the backend, or both
+    role: "Team Member – Full-Stack Developer",
+    company: "Restaurant Management System (Team Project)",
+    location: "Remote",
+    period: "2025", // EDIT: your real dates
+    type: "Team Project",
+    points: [
+      "Developed a restaurant management and food-ordering system together with a team of developers",
+      "Collaborated through a shared GitHub repository using branches, pull requests and merge reviews",
+      "Split the work between frontend and backend and integrated both through REST APIs",
+      "Contributed to features such as menu browsing, cart, favourites and order tracking",
+    ],
+    tech: ["React", "Node.js", "Express", "REST API", "Git & GitHub"],
   },
 ];

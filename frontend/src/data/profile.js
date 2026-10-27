@@ -30,7 +30,7 @@ export const profile = {
 
   socials: {
     github: "https://github.com/temesgen5586-git",
-    linkedin: "https://www.linkedin.com/in/temesgen-worku",
+    linkedin: "https://www.linkedin.com/in/temesgen-worku-5586temu/",
     telegram: "https://t.me/temu55860",
     facebook: "https://facebook.com/shegaw.worku",
     instagram: "https://instagram.com/temu55860",
