@@ -67,7 +67,7 @@ export default function AboutPreview() {
             ))}
           </ul>
 
-          <Link to="/about" className="btn-primary">
+          <Link to="/About" className="btn-primary">
             Learn More About Me <ArrowRight size={18} />
           </Link>
         </motion.div>
